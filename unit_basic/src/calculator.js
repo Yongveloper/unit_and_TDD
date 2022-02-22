@@ -12,7 +12,11 @@ class Caculator {
   }
 
   add(num) {
-    this.value += num;
+    const sum = this.value + num;
+    if (sum > 100) {
+      throw new Error('Value can not be greater than 100');
+    }
+    this.value = sum;
   }
 
   subtract(num) {
